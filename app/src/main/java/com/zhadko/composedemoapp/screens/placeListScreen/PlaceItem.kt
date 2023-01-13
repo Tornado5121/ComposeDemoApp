@@ -12,6 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
@@ -51,6 +52,20 @@ fun PlaceItem(place: Place) {
                     .clip(RoundedCornerShape(dimensionResource(id = R.dimen.size_10))),
                 contentScale = ContentScale.Crop,
                 error = painterResource(id = R.drawable.no_image_placeholder),
+            )
+
+            Box(
+                modifier = Modifier
+                    .clip(RoundedCornerShape(dimensionResource(id = R.dimen.size_10)))
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                colorResource(id = R.color.grey_transparent),
+                                colorResource(id = R.color.black_secondary)
+                            )
+                        )
+                    )
+                    .fillMaxSize()
             )
 
             val checkedState = remember { mutableStateOf(place.favorited) }

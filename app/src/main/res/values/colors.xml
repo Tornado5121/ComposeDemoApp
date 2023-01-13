@@ -11,4 +11,7 @@
     <color name="grey_primary">#575757</color>
     <color name="grey_secondary">#949494</color>
     <color name="green">#55C595</color>
+
+    <color name="grey_transparent">#00323232</color>
+    <color name="black_secondary">#FF131313</color>
 </resources>
